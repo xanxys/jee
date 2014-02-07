@@ -1,0 +1,35 @@
+scons: Reading SConscript files ...
+scons: done reading SConscript files.
+scons: Building targets ...
+clang++ -o main.o -c -std=c++11 -O3 main.cpp
+main.cpp:26:14: error: no viable overloaded '='
+                        timestamp = it->second;
+                        ~~~~~~~~~ ^ ~~~~~~~~~~
+/usr/lib/gcc/x86_64-redhat-linux/4.8.2/../../../../include/c++/4.8.2/bits/basic_string.h:546:7: note: 
+      candidate function not viable: no known conversion from 'picojson::value'
+      to 'const std::basic_string<char>' for 1st argument
+      operator=(const basic_string& __str) 
+      ^
+/usr/lib/gcc/x86_64-redhat-linux/4.8.2/../../../../include/c++/4.8.2/bits/basic_string.h:554:7: note: 
+      candidate function not viable: no known conversion from 'picojson::value'
+      to 'const char *' for 1st argument
+      operator=(const _CharT* __s) 
+      ^
+/usr/lib/gcc/x86_64-redhat-linux/4.8.2/../../../../include/c++/4.8.2/bits/basic_string.h:565:7: note: 
+      candidate function not viable: no known conversion from 'picojson::value'
+      to 'char' for 1st argument
+      operator=(_CharT __c) 
+      ^
+/usr/lib/gcc/x86_64-redhat-linux/4.8.2/../../../../include/c++/4.8.2/bits/basic_string.h:580:7: note: 
+      candidate function not viable: no known conversion from 'picojson::value'
+      to 'std::basic_string<char>' for 1st argument
+      operator=(basic_string&& __str)
+      ^
+/usr/lib/gcc/x86_64-redhat-linux/4.8.2/../../../../include/c++/4.8.2/bits/basic_string.h:592:7: note: 
+      candidate function not viable: no known conversion from 'picojson::value'
+      to 'initializer_list<char>' for 1st argument
+      operator=(initializer_list<_CharT> __l)
+      ^
+1 error generated.
+scons: *** [main.o] Error 1
+scons: building terminated because of errors.
